@@ -1,12 +1,12 @@
-const { ARGV_CONFIG, VALID_ARGUMENTS } = require("./argvConfig");
+const { ARGUMENTS_CONFIG, VALID_ARGUMENTS } = require("../configs/arguments.cfg");
 const process = require("process");
-const { validateConfig, validateCiphersConfig } = require("./ciphers.cfg");
+const { validateConfig, validateCiphersConfig } = require("../configs/ciphers.cfg");
 
 module.exports = () => {
   const args = process.argv.slice(2);
 
   args.forEach((el, index, arr) => {
-    ARGV_CONFIG.filter((item) => {
+    ARGUMENTS_CONFIG.filter((item) => {
       if (item.alias === el || item.shortAlias === el) arr[index] = item.name;
     });
   });
