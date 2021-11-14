@@ -1,0 +1,19 @@
+{
+  "name": "rssnode",
+  "version": "1.0.0",
+  "description": "RSS Node.js course",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yooopi/rss_nodejs.git"
+  },
+  "author": "Vasak Aramian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yooopi/rss_nodejs/issues"
+  },
+  "homepage": "https://github.com/yooopi/rss_nodejs#readme"
+}
