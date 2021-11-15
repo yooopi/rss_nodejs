@@ -9,9 +9,9 @@ exports.VALID_COMMANDS = CIPHERS.map((item) => {
   return item.commands;
 }).flat();
 
-exports.validateCiphersConfig = (str) => {
-  const ciphers = str.split("-");
-  ciphers.forEach((item) => {
+exports.validateConfig = (str) => {
+  const commands = str.split("-");
+  commands.forEach((item) => {
     if (!this.VALID_COMMANDS.includes(item)) {
       process.stderr.write(`Wrong config, change cipher: ${item}\n`);
       process.exit(3);

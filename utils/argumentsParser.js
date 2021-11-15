@@ -1,12 +1,9 @@
+const process = require("process");
 const {
   ARGUMENTS_CONFIG,
   VALID_ARGUMENTS,
 } = require("../configs/arguments.cfg");
-const process = require("process");
-const {
-  validateConfig,
-  validateCiphersConfig,
-} = require("../configs/ciphers.cfg");
+const { validateConfig } = require("../configs/ciphers.cfg");
 
 module.exports = () => {
   const args = process.argv.slice(2);
@@ -41,7 +38,7 @@ module.exports = () => {
     return value;
   }, {});
 
-  validateCiphersConfig(parsedArguments.config);
+  validateConfig(parsedArguments.config);
 
   return parsedArguments;
 };
