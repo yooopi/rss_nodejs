@@ -27,3 +27,7 @@ const argvParser = require("./utils/argumentsParser");
 const args = argvParser();
 
 console.log("PARSED ARGUMENTS: ", args);
+
+// Get array of ciphers from args.config
+// Create array of streams from config
+// Put ...array into pipeline

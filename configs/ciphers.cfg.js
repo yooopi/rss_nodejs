@@ -1,3 +1,4 @@
+// Each cipher implementation placed in ./ciphers/${name}.js
 const CIPHERS = [
   { name: "Caesar", commands: ["C0", "C1"] },
   { name: "ROT-8", commands: ["R0", "R1"] },

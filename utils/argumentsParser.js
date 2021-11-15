@@ -1,10 +1,18 @@
-const { ARGUMENTS_CONFIG, VALID_ARGUMENTS } = require("../configs/arguments.cfg");
+const {
+  ARGUMENTS_CONFIG,
+  VALID_ARGUMENTS,
+} = require("../configs/arguments.cfg");
 const process = require("process");
-const { validateConfig, validateCiphersConfig } = require("../configs/ciphers.cfg");
+const {
+  validateConfig,
+  validateCiphersConfig,
+} = require("../configs/ciphers.cfg");
 
 module.exports = () => {
   const args = process.argv.slice(2);
 
+  // Renaming arguments for easier validation
+  // ex. ['-i', '--output', '-c'] >> ['input', 'output', 'config']
   args.forEach((el, index, arr) => {
     ARGUMENTS_CONFIG.filter((item) => {
       if (item.alias === el || item.shortAlias === el) arr[index] = item.name;
@@ -18,6 +26,8 @@ module.exports = () => {
     process.exit(1);
   }
 
+  // Transform array of arguments into object with unique keys
+  // ex. ['input', './input.txt'] >> { input: "./input.txt" }
   const parsedArguments = args.reduce((value, item, index, arr) => {
     if (value.hasOwnProperty(item)) {
       process.stderr.write(`Duplicated arguemnt: ${item}\n`);
