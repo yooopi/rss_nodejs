@@ -26,3 +26,9 @@ For example, config `"C1-C1-R0-A"` means "encode by Caesar cipher => encode by C
 1. If the input file option is missed - `stdin` will be used as an input source.
 2. If the output file option is missed - `stdout` will be used as an output destination.
 3. Encoding and decoding works only with en alphabet. All other characters will be kept untouched.
+
+## How to run
+1. Clone repository
+2. Your Node.js version should be at least 16.13.0
+3. Run `node index.js -c {your config}`. Then type text you need to cipher and finish application by CTRL + C.
+  * Arguments description is above
