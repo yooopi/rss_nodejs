@@ -7,7 +7,7 @@
 
 CLI tool could accept 3 options (short alias and full name):
 
-*  **-c, --config**: config for ciphers — **required option**. Config is a string with pattern `{XY(-)}n`, where:
+1.  **-c, --config**: config for ciphers — **required option**. Config is a string with pattern `{XY(-)}n`, where:
   * `X` is a cipher mark:
     * `C` is for Caesar cipher (with shift 1)
     * `A` is for Atbash cipher
@@ -15,18 +15,29 @@ CLI tool could accept 3 options (short alias and full name):
   * `Y` is flag of encoding or decoding (mandatory for Caesar cipher and ROT-8 cipher and should not be passed Atbash cipher)
     * `1` is for encoding
     * `0` is for decoding
-*  **-i, --input**: a path to input file
-*  **-o, --output**: a path to output file
+2.  **-i, --input**: a path to input file
+3.  **-o, --output**: a path to output file
 
 For example, config `"C1-C1-R0-A"` means "encode by Caesar cipher => encode by Caesar cipher => decode by ROT-8 => use Atbash"
 
 ## Details:
 1. If the input file option is missed - `stdin` will be used as an input source.
 2. If the output file option is missed - `stdout` will be used as an output destination.
-3. Encoding and decoding works only with en alphabet. All other characters will be kept untouched.
+3. Encoding and decoding **works only with english alphabet**. All other characters will be kept untouched.
 
 ## How to run
 1. Clone repository
-2. Your Node.js version should be at least 16.13.0
-3. Run `node index.js -c {your config}`. Then type text you need to cipher and finish application by CTRL + C.
-  * Arguments description is above
+2. Your Node.js version should be at least 16.13.0 or above
+3. Run `node index.js -c {your config}`. Then type text you need to cipher and finish application by CTRL + C. Arguments description is above.
+
+### Usage example:
+```bash
+$ node index.js -c "C1-C1-R0-A" -i "./input.txt" -o "./output.txt"
+```
+
+> input.txt
+> `This is secret. Message about "_" symbol!`
+
+> output.txt
+> `Myxn xn nbdobm. Tbnnfzb ferlm "_" nhteru!`
+
