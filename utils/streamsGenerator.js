@@ -1,6 +1,5 @@
 const fs = require("fs");
 const { constants } = require("fs");
-const path = require("path");
 const { stdin, stdout } = require("process");
 const { Transform } = require("stream");
 const { atbash, caesar, rot8 } = require("../ciphers");
