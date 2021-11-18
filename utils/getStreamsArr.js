@@ -1,8 +1,8 @@
-const { atbash, caesar, rot8 } = require("./streamsGenerator");
+const { atbash, caesar, rot8 } = require("../streams/streamsGenerator");
 
 // Get config array and return array of generated transform streams
 // ['C1', 'R1, 'A'] >> [caesar("encode"), rot8("encode"), atbash()]
-exports.getStreamsFromConfig = (config) =>
+exports.getStreamsArr = (config) =>
   config.map((element) => {
     switch (element) {
       case "C0":
