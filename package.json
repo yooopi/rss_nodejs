@@ -4,7 +4,9 @@
   "description": "RSS Node.js course",
   "main": "index.js",
   "scripts": {
-    
+    "start": "node index.js",
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/yooopi/rss_nodejs/issues"
   },
-  "homepage": "https://github.com/yooopi/rss_nodejs#readme"
+  "homepage": "https://github.com/yooopi/rss_nodejs#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ]
+  }
 }
