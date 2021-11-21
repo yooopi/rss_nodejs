@@ -1,4 +1,4 @@
-exports.ARGUMENTS_CONFIG = [
+const ARGUMENTS_CONFIG = [
   {
     name: "config",
     alias: "--config",
@@ -22,10 +22,14 @@ exports.ARGUMENTS_CONFIG = [
   },
 ];
 
-exports.VALID_ARGUMENTS = this.ARGUMENTS_CONFIG.map((item) => {
-  return item.name;
-});
+const VALID_ARGUMENTS = ARGUMENTS_CONFIG.map((item) => item.name);
 
-exports.REQUIRED_ARGUMENTS = this.ARGUMENTS_CONFIG.filter(
+const REQUIRED_ARGUMENTS = ARGUMENTS_CONFIG.filter(
   (item) => item.isRequired
 ).map((item) => item.name);
+
+module.exports = {
+  ARGUMENTS_CONFIG,
+  VALID_ARGUMENTS,
+  REQUIRED_ARGUMENTS,
+};
