@@ -1,9 +1,9 @@
 const fs = require("fs");
 const { pipeline } = require("stream");
-const { readable, writable } = require("./streams/streamsGenerator");
-const { argumentsParser } = require("./utils/argumentsParser");
-const { getStreamsArr } = require("./utils/getStreamsArr");
-const { errorsHandler } = require("./utils/errorsHandler");
+const { readable, writable } = require("./src/streams/streamsGenerator");
+const { argumentsParser } = require("./src/utils/argumentsParser");
+const { getStreamsArr } = require("./src/utils/getStreamsArr");
+const { errorsHandler } = require("./src/utils/errorsHandler");
 
 try {
   const { input, output, config } = argumentsParser();

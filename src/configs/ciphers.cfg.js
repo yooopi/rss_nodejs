@@ -7,13 +7,19 @@ const CIPHERS = [
   { name: "Atbash", commands: ["A"] },
 ];
 
-exports.VALID_COMMANDS = CIPHERS.map((item) => {
+const VALID_COMMANDS = CIPHERS.map((item) => {
   return item.commands;
 }).flat();
 
-exports.validateConfig = (str) => {
+const validateConfig = (str) => {
   const commands = str.split("-");
   commands.forEach((item) => {
-    if (!this.VALID_COMMANDS.includes(item)) throw new CipherConfigError(item);
+    if (!VALID_COMMANDS.includes(item)) throw new CipherConfigError(item);
   });
 };
+
+module.exports = {
+  CIPHERS,
+  VALID_COMMANDS,
+  validateConfig,
+}
